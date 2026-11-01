@@ -1,0 +1,21 @@
+{
+  "name": "stop-bullying-remotion",
+  "version": "1.0.0",
+  "description": "Motion Graphics Infografis Edukasi Stop Bullying dengan Remotion React",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render StopBullyingMain out/stop-bullying.mp4",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.218"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.539",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.4.5"
+  }
+}

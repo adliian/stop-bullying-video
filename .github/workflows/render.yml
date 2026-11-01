@@ -1,0 +1,32 @@
+name: Render Remotion Video
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install CLI Remotion
+        run: npm install --save-dev @remotion/cli
+
+      - name: Render MP4
+        run: npx remotion render StopBullyingMain out/stop-bullying.mp4
+
+      - name: Upload Artifact MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-stop-bullying
+          path: out/stop-bullying.mp4
